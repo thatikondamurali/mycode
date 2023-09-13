@@ -1,0 +1,20 @@
+---
+- name: "Debug Lists - Example 03"
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    my_listA:
+      - "List A - Item 1"
+      - "List A - Item 2"
+    my_listB:
+      - "List B - Item 1"
+      - "List B - Item 2"
+
+  tasks:
+    - name: "List items in listA and B"
+      debug:
+        msg: "Debug module allows us to print to the screen --> {{ item }}"
+      loop:
+        - "{{ my_listA }}"
+        - "{{ my_listB }}"
