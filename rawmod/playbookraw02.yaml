@@ -8,7 +8,7 @@
   tasks:
   - name: Create a file over an SSH channel
     copy:
-      content: "{{ ansible_env.LOGNAME }}"
+      content: "{{ ansible_env }}"
       dest: newfile01.txt
       force: yes   # remote file will be replaced when contents are different than the source
 
